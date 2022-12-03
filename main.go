@@ -19,29 +19,29 @@ func main() {
 	var number int
 
 
-	var success bool
+	var success bool // a sucess variable 
 	
-	for num := 0; num < 10;num++{
+	for num := 0; num < 10;num++{ // our users to guess up to 10 times
 	fmt.Println("you have", 10-num, "guesses left. ")
 	
 	fmt.Println("Make a guess: ")
-	_, err := fmt.Scanln(&number)
+	_, err := fmt.Scanln(&number) // accept an input from the command line interface
 	if err != nil{
 		panic(err)
 	}
-	if number < random {
+	if number < random {// checks if the guess number is lesss than than the random number
 		fmt.Println("Oops. Your guess is LOW.")
-	}else if number > random{
+	}else if number > random{ // checks if the guess number is greater than than the random number
 		fmt.Println("Oops. Your guess is HIGH ")
 	}else{
-		success = true
+		success = true // success is true then user guessed right
 		fmt.Println("Good job! You guessed it!")
 		break
 	}
 	
 }
 
-if !success{
+if !success{ // success is false then user guessed wrong
 	fmt.Println("sorry, you didnt guess my number. It was", random)
 }
 
